@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Custom T-Shirt & Brands</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: white;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgb(237, 106, 24);
+      color: #fff;
+      padding: 8px 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo video {
+      width: 200px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    .nav-links-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #e6e6e6;
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar-right button {
+      padding: 6px 10px;
+      background-color: white;
+      color: #333;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .navbar-right button:hover {
+      background-color: #e6e6e6;
+    }
+
+
+    /* NAV BAR (Optional) */
+    nav {
+      background-color: white;
+      padding: 12px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #ff6f00;
+      font-size: 2rem;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: black;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      border: 2px solid #ccc;
+      margin: 20px auto;
+      max-width: 1100px;
+      background-color: #fff;
+    }
+
+    .content {
+      flex: 1;
+      padding-right: 30px;
+    }
+
+    .content h1 {
+      color: #ff6f00;
+      font-size: 38px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .content h3 {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .content ul {
+      list-style-type: none;
+      padding: 0;
+      line-height: 1.8;
+    }
+
+    .content ul li {
+      position: relative;
+      padding-left: 25px;
+      font-size: 16px;
+      color: black;
+    }
+
+    .content ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #ff6f00;
+    }
+
+    .btn {
+      margin-top: 25px;
+      background-color: #ff6f00;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .hero img {
+      max-width: 400px;
+      border-radius: 12px;
+    }
+
+    /* EXCLUSIVE BRANDS SECTION */
+    .brands {
+      padding: 40px 20px;
+      border: 2px solid #ccc;
+      margin: 20px auto;
+      max-width: 1100px;
+      background-color: #fff;
+    }
+
+    .brands h1 {
+      color: #ff6f00;
+      font-size: 32px;
+    }
+
+    .brands h2 {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 60px;
+      margin-top: 40px;
+    }
+
+    .brand-grid img {
+      width: 100%;
+      max-width: 100px;
+      height: auto;
+      margin: auto;
+      display: block;
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .content {
+        padding-right: 0;
+        text-align: center;
+      }
+
+      .hero img {
+        margin-top: 30px;
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    /* OFFERS SECTION */
+.offers {
+      padding: 40px 20px;
+      border: 2px solid #ccc;
+      margin: 20px auto;
+      max-width: 1100px;
+      background-color: #fff;
+}
+
+.offers h1 {
+  font-size: 32px;
+  color:#ff6f00;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 80px;
+  justify-content: center;
+}
+
+.offer-box {
+  border: 4px solid red;
+  padding: 30px 0;
+  font-size: 28px;
+  text-align: center;
+  font-weight: bold;
+  color: red;
+  background: white;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.offer-box span {
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.offer-box:hover {
+  background-color: #ffebee;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2);
+}
+
+    .sale-section {
+      padding: 40px 20px;
+      border: 2px solid;
+      margin: 20px auto;
+      border: 2px solid #ccc;
+      max-width: 1100px;
+      background-color: #fff;
+    }
+
+    .sale-banner {
+      background-color: red;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sale-banner strong {
+      background-color: yellow;
+      color: red;
+      padding: 5px 15px;
+      border-radius: 4px;
+      font-size: 26px;
+    }
+
+    .sale-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .sale-img {
+      flex: 1 1 45%;
+      text-align: center;
+    }
+
+    .sale-img img {
+      width: 90%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .sale-details {
+      flex: 1 1 45%;
+      text-align: left;
+      padding: 10px 20px;
+    }
+
+    .sale-details .brands img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .sale-details h2 {
+      font-size: 32px;
+      margin: 20px 0 10px;
+      color: black;
+    }
+
+    .sale-details p {
+      font-size: 18px;
+      margin: 5px 0;
+      color: #333;
+    }
+
+    .sale-details .code {
+      color: red;
+      font-weight: bold;
+    }
+
+    .shop-btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .shop-btn:hover {
+      background-color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .sale-content {
+        flex-direction: column;
+      }
+
+      .sale-details {
+        text-align: center;
+        padding: 20px 10px;
+      }
+
+      .sale-details h2 {
+        font-size: 26px;
+      }
+    }
+html {
+  scroll-behavior: smooth;
+}
+.featured-picks {
+  padding: 40px 20px;
+  border: 2px solid #ccc;
+  margin: 20px auto;
+  max-width: 1100px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.featured-picks h1 {
+  color: #ff6f00;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.pick-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.pick-card {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  transition: transform 0.3s ease;
+}
+
+.pick-card:hover {
+  transform: scale(1.05);
+}
+
+.pick-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.pick-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-transform: capitalize;
+}
+
+</style>
+</head>
+<body>
+  <header class="navbar">
+  <div class="logo">
+    <video src="../Home_page/Grey Black Simple Monoline Modern Elegant Fashion Logo.mp4" autoplay muted loop></video>
+    <p>Sports Kits Services Provider</p>
+    <p>Since 1988</p>
+  </div>
+
+  <div class="nav-links-container">
+    <ul class="nav-links">
+      <li><a href="../Home_page/home_page.html">Home</a></li>
+      <li><a href="../About_us/about_us.html">About Us</a></li>
+      <li><a href="../Product/product.html">Products</a></li>
+      <li><a href="../Services/services.html">Services</a></li>
+      <li><a href="../Careers/careers.html">Careers</a></li>
+      <li><a href="../Contact_us/contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <div class="navbar-right">
+    <button onclick="openModal('loginModal')">Login</button>
+    <button onclick="openModal('signupModal')">Sign Up</button>
+  </div>
+</header>
+
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#brands" class="nav-link">Brands</a>
+    <a href="#offers" class="nav-link">Offers</a>
+    <a href="#sale-section" class="nav-link">sales</a>
+  </nav>
+
+  <!-- CUSTOM TSHIRT SERVICE SECTION -->
+  <section class="hero">
+    <div class="content">
+      <h1>Custom T-Shirt Service</h1>
+      <h3>Manufacturing, Printing & Embroidery</h3>
+      <ul>
+        <li>No Minimum Order Quantity</li>
+        <li>Front, Back & Sleeve placements Available</li>
+        <li>Make Your Own Design</li>
+        <li>Men, Women & Kids</li>
+        <li>Buy More Save More</li>
+        <li>Made in Tiruppur</li>
+        <li>ISO 9001 Certified Company</li>
+        <li>All India delivery at your doorstep</li>
+        <li>Discounted Price for Bulk Quantity</li>
+        <li>Quality delivered at your doorstep!</li>
+        <li>5-7 Working Days to Despatch</li>
+      </ul>
+      <button class="btn" onclick="alert('Thanks for your interest! We will reach out soon.')">Get Started</button>
+    </div>
+    <img src="blacktshirt_img.avif" alt="Tshirt" />
+  </section>
+
+  <!-- EXCLUSIVE BRANDS SECTION -->
+  <section id="brands" class="brands">
+    <h1>EXCLUSIVE BRANDS</span></h1>
+    <h2>Iconic Labels From The House Of Shoppers Stop</h2>
+    <div class="brand-grid">
+      <img src="./brands/brand1.png" alt="URYOU">
+      <img src="./brands/brand2.png" alt="STOP">
+      <img src="./brands/brand3.png" alt="LIFE">
+      <img src="./brands/brand4.png" alt="FRATINI">
+      <img src="./brands/brand5.png" alt="KASHISH">
+      <img src="brands/brand6.png" alt="INFUSE">
+      <img src="./brands/brand7.png" alt="INSENSE">
+      <img src="./brands/brand8.png" alt="HAUTE CURRY">
+      <img src="./brands/brand9.png" alt="IVY">
+      <img src="./brands/brand10.png" alt="FERN">
+      <img src="./brands/brand11.png" alt="BACK TO EARTH">
+      <img src="./brands/brand12.png" alt="TREASURES">
+      <img src="./brands/brand13.png" alt="KARROT">
+      <img src="./brands/brand14.png" alt="BANDEYA">
+      <img src="./brands/brand15.png" alt="ARCELIA">
+      <img src="./brands/brand16.png" alt="ALTLIFE">
+      <img src="./brands/brand17.png" alt="ELIZA">
+      <img src="./brands/brand18.png" alt="STOP KIDS">
+    </div>
+  </section>
+
+  <!-- FLAT-TERING OFFERS SECTION -->
+<section id="offers" class="offers">
+  <h1>FLAT-TERING OFFERS</h1>
+  <div class="offer-grid">
+    <div class="offer-box">80<span>% OFF</span></div>
+    <div class="offer-box">70<span>% OFF</span></div>
+    <div class="offer-box">60<span>% OFF</span></div>
+    <div class="offer-box">50<span>% OFF</span></div>
+    <div class="offer-box">40<span>% OFF</span></div>
+    <div class="offer-box">30<span>% OFF</span></div>
+  </div>
+</section>
+
+<!-- SALE PROMOTION SECTION -->
+<section id="sale-section" class="sale-section">
+  <div class="sale-banner">
+    <span>SALE</span>
+    <strong>50% OFF</strong>
+  </div>
+
+  <div class="sale-content">
+    <div class="sale-img">
+      <img src="offer1.png" alt="Shoes Sale" />
+    </div>
+    <div class="sale-details">
+      <div class="brands">
+        <img src="brand1.png" alt="Skechers" />
+        <img src="brand2.png" alt="Lee Cooper" />
+      </div>
+      <h2>UP TO 50% OFF</h2>
+      <p><strong>+ EXTRA ₹1200 OFF</strong></p>
+      <p>USE CODE: <span class="code">SAVEBIG</span></p>
+      <button class="shop-btn">SHOP NOW</button>
+    </div>
+  </div>
+</section>
+
+<!-- Second Offer Section (Optional duplicate structure) -->
+<section class="sale-section">
+  <div class="sale-banner">
+    <span>SALE</span>
+    <strong>50% OFF</strong>
+  </div>
+
+  <div class="sale-content">
+    <div class="sale-img">
+      <img src="offer2.png" alt="Shoes Sale" />
+    </div>
+    <div class="sale-details">
+      <div class="brands">
+        <img src="brand3.png" alt="Skechers" />
+        <img src="brand4.png" alt="Lee Cooper" />
+      </div>
+      <h2>UP TO 50% OFF</h2>
+      <p><strong>+ EXTRA ₹1200 OFF</strong></p>
+      <p>USE CODE: <span class="code">SAVEBIG</span></p>
+      <button class="shop-btn">SHOP NOW</button>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PICKS SECTION -->
+<section class="featured-picks">
+  <h1>FEATURED PICKS</h1>
+  <div class="pick-grid">
+    <div class="pick-card">
+      <img src="./Sports.png" alt="Sports" />
+    </div>
+    <div class="pick-card">
+      <img src="./Shoes.png" alt="Shoes" />
+    </div>
+    <div class="pick-card">
+      <img src="./Fitness.png" alt="Fitness" />
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>

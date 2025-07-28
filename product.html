@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products | Book your Sport Kits</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgb(237, 106, 24);
+      color: #fff;
+      padding: 8px 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo video {
+      width: 200px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    .nav-links-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #e6e6e6;
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar-right button {
+      padding: 6px 10px;
+      background-color: white;
+      color: #333;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .navbar-right button:hover {
+      background-color: #e6e6e6;
+    }
+
+
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+      font-size: 2.2rem;
+      color: #ff6f00;
+    
+    }
+
+    .section {
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 1200px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      padding-left: 10px;
+      border-left: 5px solid orange;
+      color: black;
+    }
+    .card p {
+     font-size: 0.9rem;
+     color: #555; /* Optional: change to #fff for black backgrounds */
+     margin: 6px 0;
+    }
+
+
+    /* Categories */
+    .categories {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .category-item {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .category-item img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .category-item p {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    /* Product Cards */
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      color: white;
+      width: 200px;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 140px;
+      object-fit: contain;
+      background-color: white;
+      border-radius: 4px;
+    }
+
+    .card h4 {
+      font-size: 1rem;
+      margin: 10px 0 5px;
+    }
+
+    .price {
+      color: limegreen;
+      font-weight: bold;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: red;
+      font-size: 0.9rem;
+    }
+
+    .card button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: orange;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background-color: #ff6600;
+      color: white;
+    }
+
+.promo-wrapper {
+  display: flex;
+  justify-content: center; /* Center the promo cards horizontally */
+  gap: 40px;                /* Space between the cards */
+  flex-wrap: wrap;
+}
+
+.promo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.promo-card img {
+  width: 260px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.promo-card button {
+  padding: 8px 12px;
+  background-color: orange;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.promo-card button:hover {
+  background-color: #ff6600;
+  color: white;
+}
+
+
+
+    @media screen and (max-width: 768px) {
+      .promo-images {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .promo-images img {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+  <div class="logo">
+    <video src="../Home_page/Grey Black Simple Monoline Modern Elegant Fashion Logo.mp4" autoplay muted loop></video>
+    <p>Sports Kits Services Provider</p>
+    <p>Since 1988</p>
+  </div>
+
+  <div class="nav-links-container">
+    <ul class="nav-links">
+      <li><a href="../Home_page/home_page.html">Home</a></li>
+      <li><a href="../About_us/about_us.html">About Us</a></li>
+      <li><a href="../Product/product.html">Products</a></li>
+      <li><a href="../Services/services.html">Services</a></li>
+      <li><a href="../Careers/careers.html">Careers</a></li>
+      <li><a href="../Contact_us/contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <div class="navbar-right">
+    <button onclick="openModal('loginModal')">Login</button>
+    <button onclick="openModal('signupModal')">Sign Up</button>
+  </div>
+</header>
+
+
+  <h1>Book your Sport Kits</h1>
+
+  <!-- Shop by Category -->
+  <div class="section">
+    <div class="section-title">SHOP BY CATEGORIES</div>
+    <div class="categories">
+      <div class="category-item">
+        <img src="football.png" alt="Football" />
+        <p>Football</p>
+      </div>
+      <div class="category-item">
+        <img src="squash.png" alt="Squash" />
+        <p>Squash</p>
+      </div>
+      <div class="category-item">
+        <img src="Ping Pong.jpg" alt="Ping Pong" />
+        <p>Ping Pong</p>
+      </div>
+      <div class="category-item">
+        <img src="basketball.png" alt="Basketball" />
+        <p>Basketball</p>
+      </div>
+      <div class="category-item">
+        <img src="tennis.png" alt="Tennis" />
+        <p>Tennis</p>
+      </div>
+      <div class="category-item">
+        <img src="Football (2).png" alt="Shoes" />
+        <p>Football</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Selling Shoes -->
+ <div class="section">
+  <div class="section-title">TOP SELLING ASICS SHOES</div>
+  <div class="product-grid">
+    
+    <div class="card">
+      <img src="shoes1.png" alt="Shoe 1">
+      <h4>ASICS Gel Peak 2</h4>
+      <p>Asics Gel Peake 2 Cricket Shoes white and Velvet...</p>
+      <div class="price">₹5,599.00 <span class="old-price">₹6,999.00</span></div>
+      <p>(Including all Taxes)</p>
+      <button onclick="addToCart('ASICS Gel Peak 2')">Add To Cart</button>
+    </div>
+    
+    <div class="card">
+      <img src="shoes1.png" alt="Shoe 2">
+      <h4>ASICS FF Leather</h4>
+      <p>Asics Gel Peake 2 Cricket Shoes white and Velvet...</p>
+      <div class="price">₹5,599.00 <span class="old-price">₹6,999.00</span></div>
+      <p>(Including all Taxes)</p>
+      <button onclick="addToCart('ASICS FF Leather')">Add To Cart</button>
+    </div>
+    
+    <div class="card">
+      <img src="shoes_2.png" alt="Shoe 3">
+      <h4>ASICS Speed Menace</h4>
+      <p>Asics 350 Not Out FF Leather Full Spike Cricket...</p>
+      <div class="price">₹10,999.00 <span class="old-price">₹13,999.00</span></div>
+      <p>(Including all Taxes)</p>
+      <button onclick="addToCart('ASICS 350 Leather')">Add To Cart</button>
+    </div>
+    
+    <div class="card">
+      <img src="shoes_2.png" alt="Shoe 4">
+      <h4>ASICS Speed Menace</h4>
+      <p>Engineered grip for unmatched stability in competitive cricket.</p>
+      <div class="price">₹11,180.00 <span class="old-price">₹13,999.00</span></div>
+      <p>(Including all Taxes)</p>
+      <button onclick="addToCart('ASICS Speed Menace')">Add To Cart</button>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Basketball Products -->
+  <div class="section">
+    <div class="section-title">Basketball</div>
+    <div class="product-grid">
+      <div class="card">
+        <img src="basketball1.png" alt="Basket 1">
+        <h4>COSCO Super Size 6</h4>
+        <p>COSCO super Basketball Size 6</p>
+        <div class="price">₹630.00 <span class="old-price">₹675.00</span></div>
+        <p>(Inclusive of all taxes)</p>
+        <button onclick="addToCart('COSCO Super Size 6')">Add To Cart</button>
+      </div>
+      <div class="card">
+        <img src="Basketball2.png" alt="Basket 2">
+        <h4>COSCO Pulse Size 6</h4>
+        <p>COSCO pulse Basketball Size 6</p>
+        <div class="price">₹720.00 <span class="old-price">₹800.00</span></div>
+        <p>(Inclusive of all taxes)</p>
+        <button onclick="addToCart('COSCO Pulse Size 6')">Add To Cart</button>
+      </div>
+      <div class="card">
+        <img src="Basketball3.png" alt="Basket 3">
+        <h4>COSCO Funtime Size 6</h4>
+        <p>COSCO Funtime Basketball <br>Size 6</br></p>
+        <div class="price">₹264.00 <span class="old-price">₹275.00</span></div>
+         <p>(Inclusive of all taxes)</p>
+        <button onclick="addToCart('COSCO Funtime Size 6')">Add To Cart</button>
+      </div>
+      <div class="card">
+        <img src="Basketball4.png" alt="Basket 4">
+        <h4>COSCO Dribble Size 6</h4>
+        <p>COSCO Dribble Basketball <br>Size 6</br></p>
+        <div class="price">₹605.00 <span class="old-price">₹655.00</span></div>
+         <p>(Inclusive of all taxes)</p>
+        <button onclick="addToCart('COSCO Dribble Size 6')">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="product-grid">
+      <div class="card">
+        <img src="Basketball5.png" alt="Basket 1">
+        <h4>COSCO Super Size 6</h4>
+        <p>COSCO Basketball HiGrip <br>Size 6</br></p>
+        <div class="price">₹630.00 <span class="old-price">₹675.00</span></div>
+         <p>(Inclusive of all taxes)</p>
+        <button onclick="addToCart('COSCO Super Size 6')">Add To Cart</button>
+      </div>
+      <div class="card">
+        <img src="Basketball6.png" alt="Basket 2">
+        <h4>COSCO Pulse Size 6</h4>
+        <p>COSCO Basketball Challenge <br>Size 6</br></p>
+        <div class="price">₹720.00 <span class="old-price">₹800.00</span></div>
+         <p>(Inclusive of all taxes)</p>
+        <button onclick="addToCart('COSCO Pulse Size 6')">Add To Cart</button>
+      </div>
+      <div class="card">
+        <img src="Basketball7.png" alt="Basket 3">
+        <h4>COSCO Funtime Size 6</h4>
+        <p>COSCO Basketball Championship Size 6</p>
+        <div class="price">₹264.00 <span class="old-price">₹275.00</span></div>
+         <p>(Inclusive of all taxes)</p>
+        <button onclick="addToCart('COSCO Funtime Size 6')">Add To Cart</button>
+      </div>
+      <div class="card">
+        <img src="Basketball8.png" alt="Basket 4">
+        <h4>COSCO Dribble Size 6</h4>
+        <p>COSCO Super Basketball <br>Size 7</br></p>
+        <div class="price">₹605.00 <span class="old-price">₹655.00</span></div>
+         <p>(Inclusive of all taxes)</p>
+        <button onclick="addToCart('COSCO Dribble Size 6')">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Promo: Pickleball & Padel -->
+<div class="section">
+  <div class="section-title">NEW CATEGORY</div>
+  <div class="promo-wrapper">
+    <div class="promo-card">
+      <img src="./padel.png" alt="Padel" />
+      <button onclick="addToCart('Padel')">Add To Cart</button>
+    </div>
+
+    <div class="promo-card">
+      <img src="./pickleball.png" alt="Pickleball" />
+      <button onclick="addToCart('Pickleball')">Add To Cart</button>
+    </div>
+  </div>
+</div>
+
+  <script>
+    function addToCart(product) {
+      alert(product + ' has been added to your cart!');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Alaybee Sports</title>
+
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f8f8;
+      color: #333;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgb(237, 106, 24);
+      color: #fff;
+      padding: 8px 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo video {
+      width: 200px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    .nav-links-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #e6e6e6;
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar-right button {
+      padding: 6px 10px;
+      background-color: white;
+      color: #333;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .navbar-right button:hover {
+      background-color: #e6e6e6;
+    }
+
+    /* ABOUT SECTION */
+    .about-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .about-section h1 {
+      text-align: center;
+      color: #ff6f00;
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+    }
+
+    .about-section p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .about-section ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .about-section li {
+      margin-bottom: 10px;
+    }
+
+    /* FEATURE STRIP */
+    .feature-strip {
+      background: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 30px 15px;
+      flex-wrap: wrap;
+    }
+
+    .feature-item {
+      flex: 1 1 160px;
+      text-align: center;
+      position: relative;
+      padding: 0 20px;
+      font-size: 1rem;
+    }
+
+    .feature-item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 25%;
+      height: 50%;
+      width: 1px;
+      background: #ff6f00;
+    }
+
+    .feature-item i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #ff6f00;
+    }
+
+    .feature-item p {
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    /* COUNTER SECTION */
+    .counter-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background: #121212;
+      padding: 40px 20px;
+      margin: 40px 0;
+      border-radius: 8px;
+      color: #fff;
+    }
+
+    .counter-box {
+      flex: 1 1 200px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .counter {
+      font-size: 2.5rem;
+      color: #ff6f00;
+      font-weight: bold;
+    }
+
+    .counter-label {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 30px 15px;
+      background: #f0f0f0;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .feature-strip {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feature-item::after {
+        display: none;
+      }
+
+      .counter-section {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated {
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+    .delay-5 { animation-delay: 1s; }
+    .delay-6 { animation-delay: 1.2s; }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+  <div class="logo">
+    <video src="../Home_page/Grey Black Simple Monoline Modern Elegant Fashion Logo.mp4" autoplay muted loop></video>
+    <p>Sports Kits Services Provider</p>
+    <p>Since 1988</p>
+  </div>
+
+  <div class="nav-links-container">
+    <ul class="nav-links">
+      <li><a href="../Home_page/home_page.html">Home</a></li>
+      <li><a href="../About_us/about_us.html">About Us</a></li>
+      <li><a href="../Product/product.html">Products</a></li>
+      <li><a href="../Services/services.html">Services</a></li>
+      <li><a href="../Careers/careers.html">Careers</a></li>
+      <li><a href="../Contact_us/contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <div class="navbar-right">
+    <button onclick="openModal('loginModal')">Login</button>
+    <button onclick="openModal('signupModal')">Sign Up</button>
+  </div>
+</header>
+
+  <!-- About Section -->
+  <div class="about-section animated delay-1">
+    <h1 class="animated delay-1">About Us</h1>
+    <p class="animated delay-2"><strong>ALAYBEE SHOP</strong> is an exclusive online sports shop established by Alaybee Enterprises Pvt. Ltd., offering top-quality sports equipment and services.</p>
+    <p class="animated delay-3">With <strong>66 years</strong> of experience across 3 generations, Alaybee leads the market in manufacturing athletic equipment and has been recognized as the <strong>No.1 exporter since 2004-05</strong> by SGEPC.</p>
+    <p class="animated delay-4">We provide the latest products directly from our factory, ensuring authenticity, great prices, and fast delivery.</p>
+
+    <ul class="animated delay-5">
+      <li>Wide range of products with feature & price comparison</li>
+      <li>Direct-from-manufacturer inventory</li>
+      <li>Clear support and direct communication</li>
+      <li>Genuine product guarantee</li>
+      <li>Wishlist, order history & tracking</li>
+      <li>Secure online payments</li>
+      <li>Access to new launches</li>
+      <li>Fast, safe shipping across India</li>
+    </ul>
+  </div>
+
+  <!-- Feature Strip -->
+  <div class="feature-strip animated delay-3">
+    <div class="feature-item">
+      <i class="bi bi-patch-check-fill"></i>
+      <p>100% AUTHENTIC</p>
+    </div>
+    <div class="feature-item">
+      <i class="bi bi-shield-lock-fill"></i>
+      <p>SECURE SHOPPING</p>
+    </div>
+    <div class="feature-item">
+      <i class="bi bi-truck"></i>
+      <p>EXPRESS SHIPPING</p>
+    </div>
+    <div class="feature-item">
+      <i class="bi bi-tools"></i>
+      <p>CUSTOMIZED SERVICES</p>
+    </div>
+    <div class="feature-item">
+      <i class="bi bi-journal-bookmark-fill"></i>
+      <p>BUYERS GUIDE</p>
+    </div>
+  </div>
+
+  <!-- Counter Section -->
+  <div class="counter-section animated delay-5">
+    <div class="counter-box">
+      <div class="counter" data-target="66">0</div>
+      <div class="counter-label">Years of Excellence</div>
+    </div>
+    <div class="counter-box">
+      <div class="counter" data-target="45">0</div>
+      <div class="counter-label">Countries Exported</div>
+    </div>
+    <div class="counter-box">
+      <div class="counter" data-target="25000">0</div>
+      <div class="counter-label">Products Delivered</div>
+    </div>
+    <div class="counter-box">
+      <div class="counter" data-target="10000">0</div>
+      <div class="counter-label">Happy Customers</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer animated delay-6">
+    &copy; 2025 Alaybee Sports. All rights reserved.
+  </div>
+
+  <!-- Counter Animation JS -->
+  <script>
+    const counters = document.querySelectorAll('.counter');
+    let counted = false;
+
+    function animateCounters() {
+      counters.forEach(counter => {
+        const target = +counter.dataset.target;
+        let count = 0;
+        const update = () => {
+          const increment = Math.ceil(target / 200);
+          if (count < target) {
+            count += increment;
+            counter.innerText = count;
+            setTimeout(update, 20);
+          } else {
+            counter.innerText = target.toLocaleString();
+          }
+        };
+        update();
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      const top = document.querySelector('.counter-section').getBoundingClientRect().top;
+      if (top < window.innerHeight && !counted) {
+        animateCounters();
+        counted = true;
+      }
+    });
+  </script>
+</body>
+</html>

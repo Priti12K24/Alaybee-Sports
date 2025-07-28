@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alaybee Sports</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgb(237, 106, 24);
+      color: #fff;
+      padding: 8px 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo video {
+      width: 200px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    .nav-links-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #e6e6e6;
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar-right button {
+      padding: 6px 10px;
+      background-color: white;
+      color: #333;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .navbar-right button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(to right, #f49b64, #ee7315);
+      color: #000;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background: #0a3d62;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .hero button:hover {
+      background: #006266;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .img-box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .img-box img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      transition: opacity 0.4s ease;
+      background-color: #000;
+    }
+
+    .img-box img.back {
+      opacity: 0;
+    }
+
+    .img-box:hover img.front {
+      opacity: 0;
+    }
+
+    .img-box:hover img.back {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .image-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12, 1fr);
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 15px;
+      text-align: center;
+      color: #333;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .modal-content button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0a3d62;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .modal-content button:hover {
+      background-color: #006266;
+    }
+
+    .close {
+      color: #aaa;
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: red;
+    }
+  </style>
+</head>
+<div id="message-box" 
+style="
+  text-align: center;
+  margin: 20px;
+  font-weight: bold;
+  color: green;
+  font-size: 1.1rem;
+"></div>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <video src="Grey Black Simple Monoline Modern Elegant Fashion Logo.mp4" autoplay muted loop></video>
+    <p>Sports Kits Services Provider</p>
+    <p>Since 1988</p>
+  </div>
+
+  <div class="nav-links-container">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="../About_us/about_us.html">About Us</a></li>
+      <li><a href="../Product/product.html">Products</a></li>
+      <li><a href="../Services/services.html">Services</a></li>
+      <li><a href="../Careers/careers.html">Careers</a></li>
+      <li><a href="../Contact_us/contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <div class="navbar-right">
+    <button onclick="openModal('loginModal')">Login</button>
+    <button onclick="openModal('signupModal')">Sign Up</button>
+  </div>
+</header>
+
+<section class="image-grid" id="home">
+  <!-- 12 image flip boxes -->
+  <div class="img-box"><img src="image1x1.jpg" class="front"><img src="back_1.jpg" class="back"></div>
+  <div class="img-box"><img src="image2x1.jpg" class="front"><img src="back_2.jpg" class="back"></div>
+  <div class="img-box"><img src="image3x1.jpg" class="front"><img src="back_3.jpg" class="back"></div>
+  <div class="img-box"><img src="image4x1.jpg" class="front"><img src="back_4.jpg" class="back"></div>
+  <div class="img-box"><img src="image1x2.jpg" class="front"><img src="back_5.jpg" class="back"></div>
+  <div class="img-box"><img src="image2x2.jpg" class="front"><img src="back_6.jpg" class="back"></div>
+  <div class="img-box"><img src="image3x2.jpg" class="front"><img src="back_7.jpg" class="back"></div>
+  <div class="img-box"><img src="image4x2.jpg" class="front"><img src="back_8.jpg" class="back"></div>
+  <div class="img-box"><img src="image1x3.jpg" class="front"><img src="back_9.jpg" class="back"></div>
+  <div class="img-box"><img src="image2x3.jpg" class="front"><img src="back_10.jpg" class="back"></div>
+  <div class="img-box"><img src="image3x3.jpg" class="front"><img src="back_11.jpg" class="back"></div>
+  <div class="img-box"><img src="image4x3.jpg" class="front"><img src="back_12.jpg" class="back"></div>
+</section>
+
+<section class="hero">
+  <h1>Welcome to Alaybee Sports</h1>
+  <p>Leading Sports Kits & Equipment Provider Since 1988</p>
+  <button onclick="learnMore()">Learn More</button>
+</section>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('loginModal')">&times;</span>
+    <h2>Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+  </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('signupModal')">&times;</span>
+    <h2>Sign Up</h2>
+    <input type="text" placeholder="Username">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Sign Up</button>
+  </div>
+</div>
+
+<script>
+  function learnMore() {
+    document.getElementById("message-box").textContent = "Explore our wide range of sports kits and services!";
+  }
+
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+    document.getElementById("message-box").textContent = ""; // Clear old messages
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    const login = document.getElementById('loginModal');
+    const signup = document.getElementById('signupModal');
+    if (event.target === login) login.style.display = "none";
+    if (event.target === signup) signup.style.display = "none";
+  }
+
+  // Login Button Function
+  document.querySelector('#loginModal button').addEventListener('click', () => {
+    const username = document.querySelector('#loginModal input[type="text"]').value;
+    const password = document.querySelector('#loginModal input[type="password"]').value;
+    
+
+    if (username && password) {
+      document.getElementById("message-box").textContent = "✅ Login successful!";
+      setTimeout(() => {
+        closeModal('loginModal');
+        document.getElementById("home").scrollIntoView({ behavior: 'smooth' });
+      }, 2000);
+    } else {
+      document.getElementById("message-box").textContent = "❌ Please enter username and password.";
+    }
+  });
+
+  // Sign Up Button Function
+  document.querySelector('#signupModal button').addEventListener('click', () => {
+    const username = document.querySelector('#signupModal input[type="text"]').value;
+    const email = document.querySelector('#signupModal input[type="email"]').value;
+    const password = document.querySelector('#signupModal input[type="password"]').value;
+
+    if (username && email && password) {
+      document.getElementById("message-box").textContent = "✅ Sign up successful!";
+      setTimeout(() => {
+        closeModal('signupModal');
+        document.getElementById("home").scrollIntoView({ behavior: 'smooth' });
+      }, 2000);
+    } else {
+      document.getElementById("message-box").textContent = "❌ Please fill all fields.";
+    }
+  });
+</script>
+
+</body>
+</html>
